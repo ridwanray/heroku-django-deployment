@@ -6,7 +6,7 @@ from .serializers import BlogSerializer
 
 class BlogViewSet(viewsets.ModelViewSet):
     queryset = Blog.objects.all()
-    http_method_names = ["get", "post", "delete", "patch"]
+    http_method_names = ["get", "post", "delete", "patch","put"]
     serializer_class = BlogSerializer
     filter_backends = [
         filters.SearchFilter,
