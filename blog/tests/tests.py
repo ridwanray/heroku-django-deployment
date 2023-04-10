@@ -29,14 +29,14 @@ class TestBlogCRUD:
         assert response.status_code == 200
         assert len(response.json()) == 5
 
-    def test_delete_roles(self, api_client):
+    def test_delete_blog(self, api_client):
         blog = BlogFactory()
         url = reverse("blog:blog-detail",
                       kwargs={"pk": blog.id})
         response = api_client.delete(url)
         assert response.status_code == 204
 
-    def test_update_roles(self, api_client):
+    def test_update_blog(self, api_client):
         blog = BlogFactory(published= True)
         data = {
             "title": "New title",
